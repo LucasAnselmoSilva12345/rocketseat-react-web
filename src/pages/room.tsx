@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
 import amaLogo from '../assets/ama-logo.svg';
-import { ArrowRight, ArrowUp, Share2 } from 'lucide-react';
+import { ArrowRight, Share2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { Message } from '../components/message';
 
 export function Room() {
   const { roomId } = useParams();
@@ -58,26 +59,35 @@ export function Room() {
       </form>
 
       <ol className="list-decimal list-outside px-3 space-y-8 ">
-        <li className="ml-4 leading-relaxed text-base text-zinc-100">
-          O que é GoLang e quais são suas principais vantagens em comparação com
-          outras linguagens de programação como Python, Java ou C++?
-          <button
-            type="submit"
-            className="mt-3 flex items-center gap-2 text-orange-400 text-sm font-medium hover:text-orange-500"
-          >
-            Curtir pergunta (456) <ArrowUp className="zize-4" />
-          </button>
-        </li>
-        <li className="ml-4 leading-relaxed text-base text-zinc-100">
-          Como funcionam as goroutines em GoLang e por que elas são importantes
-          para a concorrência e paralelismo?
-          <button
-            type="submit"
-            className="mt-3 flex items-center gap-2 text-zinc-400 text-sm font-medium hover:text-zinc-300"
-          >
-            Curtir pergunta (456) <ArrowUp className="zize-4" />
-          </button>
-        </li>
+        <Message
+          textMessage="O que é GoLang e quais são suas principais vantagens em comparação com outras linguagens de programação como Python, Java ou C++?"
+          amountOfReactions={215}
+          answered
+        />
+        <Message
+          textMessage="Como funcionam as goroutines em GoLang e por que elas são importantes para a concorrência e paralelismo?"
+          amountOfReactions={187}
+        />
+
+        <Message
+          textMessage="Quais são as melhores práticas para organizar o código em um projeto GoLang, incluindo pacotes, módulos e a estrutura de diretórios?"
+          amountOfReactions={90}
+        />
+
+        <Message
+          textMessage="Como fazer a depuração de programas GoLang e quais ferramentas são recomendadas para isso?"
+          amountOfReactions={46}
+        />
+
+        <Message
+          textMessage="Quais são os primeiros passos para começar a programar em GoLang, incluindo a instalação do ambiente de desenvolvimento, configuração e execução do primeiro programa?"
+          amountOfReactions={27}
+        />
+
+        <Message
+          textMessage="Como funciona o gerenciamento de memória em GoLang, incluindo a coleta de lixo (garbage collection)? Quais são as implicações de desempenho e como otimizar o uso de memória em programas Go? Quais são as diferenças entre alocação na stack e no heap, e como essas diferenças afetam a eficiência do programa?"
+          amountOfReactions={8}
+        />
       </ol>
     </div>
   );
