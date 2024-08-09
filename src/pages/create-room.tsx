@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import amaLogo from '../assets/ama-logo.svg';
+import { ArrowRight } from 'lucide-react';
 
 export function CreateRoom() {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ export function CreateRoom() {
             className="bg-orange-400 text-orange-950 px-3 py-1.5 flex items-center gap-1.5 rounded-lg font-medium text-sm duration-200 transition-colors ease-in-out hover:bg-orange-500"
           >
             Criar Sala
+            <ArrowRight className="size-4" />
           </button>
         </form>
       </div>
