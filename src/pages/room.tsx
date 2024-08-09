@@ -5,6 +5,16 @@ import { ArrowRight, ArrowUp, Share2 } from 'lucide-react';
 export function Room() {
   const { roomId } = useParams();
 
+  function handleShareRoom() {
+    const url = window.location.href.toString();
+
+    if (navigator.share !== undefined && navigator.canShare()) {
+      navigator.share({ url });
+    } else {
+      navigator.clipboard.writeText(url);
+    }
+  }
+
   return (
     <div className="mx-auto max-w-[640px] flex flex-col gap-6 py-10 px-4">
       <div className="flex items-center gap-3 px-3">
@@ -16,7 +26,8 @@ export function Room() {
 
         <button
           type="submit"
-          className="bg-zinc-800 text-zinc-300 px-3 py-1.5 flex items-center gap-1.5 rounded-lg font-medium text-sm duration-200 transition-colors ease-in-out hover:bg-zinc-900"
+          onClick={handleShareRoom}
+          className="ml-auto bg-zinc-800 text-zinc-300 px-3 py-1.5 flex items-center gap-1.5 rounded-lg font-medium text-sm duration-200 transition-colors ease-in-out hover:bg-zinc-900"
         >
           Compartilhar
           <Share2 className="size-4" />
